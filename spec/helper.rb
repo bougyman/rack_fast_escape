@@ -1,10 +1,12 @@
 require "pathname"
-begin
-  require "bacon"
-rescue LoadError
-  require "rubygems"
-  require "bacon"
-end
+%w{bacon rack}.each { |lib|
+  begin
+    require lib
+  rescue LoadError
+    require "rubygems"
+    require lib
+  end
+}
 
 begin
   if (local_path = Pathname.new(__FILE__).dirname.join("..", "lib", "rack_fast_escape.rb")).file?
