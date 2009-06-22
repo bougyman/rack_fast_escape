@@ -1,25 +1,27 @@
-require "pathname"
 %w{rack url_escape}.each { |lib|
   begin
-    require lib 
-  rescue
+    require lib
+  rescue LoadError
     require "rubygems"
     require lib
   end
 }
-$LOAD_PATH.unshift(File.expand_path("../../", __FILE__))
 
-# Allows for pathnames to be easily added to
-class Pathname
-  def /(other)
-    join(other.to_s)
+module Rack::Utils
+  class << self
+    # Move the old versions
+    alias :old_escape :escape
+    alias :old_unescape :unescape
+
+    # Pull in the new versions
+    extend URLEscape
+
+    # Make new versions explictly available
+    alias :fast_escape :escape
+    alias :fast_unescape :unescape
+
+    # Allow for detection
+    def fast_escape?; true; end
+    def fast_unescape?; true; end
   end
 end
-
-# The Rack Fast Escape library, by TJ Vanderpoel
-module RackFastEscape
-  ROOT = Pathname($LOAD_PATH.first) unless RackFastEscape.const_defined?("ROOT")
-  LIBDIR = ROOT/:lib unless RackFastEscape.const_defined?("LIBDIR")
-end
-require RackFastEscape::LIBDIR/"rack_fast_escape/version"
-require RackFastEscape::LIBDIR/"rack_fast_escape/rack/utils"

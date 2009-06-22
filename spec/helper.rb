@@ -21,10 +21,5 @@ end
 
 Bacon.summary_on_exit
 
-describe "Spec Helper" do
-  it "Should bring our library namespace in" do
-    RackFastEscape.should == RackFastEscape
-  end
-end
 
 
