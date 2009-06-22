@@ -1,8 +1,7 @@
 desc "update version.rb"
 task :reversion do
-  File.open("lib/#{GEMSPEC.name}/version.rb", 'w+') do |file|
-    file.puts("module #{PROJECT_MODULE}")
-    file.puts('  VERSION = %p' % GEMSPEC.version.to_s)
-    file.puts('end')
-  end
+  lines = File.readlines("lib/#{GEMSPEC.name}.rb")
+  version = lines.index(lines.detect { |l| l.match /^\s+VERSION\s+=\s+/ })
+  lines[version].gsub!(/^(\s+VERSION\s+=\s+)(.*)$/) { |m| "%s\"%s\"" % [$~[1], GEMSPEC.version.to_s] }
+  File.open("lib/#{GEMSPEC.name}.rb", "wb") { |f| f.puts lines.join }
 end
