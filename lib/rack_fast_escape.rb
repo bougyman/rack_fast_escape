@@ -18,8 +18,8 @@ end
 
 # The Rack Fast Escape library, by TJ Vanderpoel
 module RackFastEscape
-  autoload :VERSION, "rack_fast_escape/version"
   ROOT = Pathname($LOAD_PATH.first) unless RackFastEscape.const_defined?("ROOT")
   LIBDIR = ROOT/:lib unless RackFastEscape.const_defined?("LIBDIR")
 end
+require RackFastEscape::LIBDIR/"rack_fast_escape/version"
 require RackFastEscape::LIBDIR/"rack_fast_escape/rack/utils"
