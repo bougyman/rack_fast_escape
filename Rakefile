@@ -44,7 +44,12 @@ PROJECT_VERSION =
   if version = ENV['PROJECT_VERSION'] || ENV['VERSION']
     version
   else
-    RackFastEscape::VERSION rescue Date.today.strftime("%Y.%m.%d")
+    begin
+      require "lib/rack_fast_escape/version"
+      RackFastEscape::VERSION 
+    rescue 
+      Date.today.strftime("%Y.%m.%d")
+    end
   end
 
 # To release the monthly version do:
