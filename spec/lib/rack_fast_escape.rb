@@ -1,16 +1,12 @@
 require File.expand_path("../../helper", __FILE__)
 describe "RackFastEscape" do
   describe "module embedding" do
-    it "brings in Rack::Utils as R::U" do
-      Rack::Utils.should == RackFastEscape::R::U
-    end
-
 
     describe "escape methods" do
-      it "defines fast_escape on Rack::Utils via R::U" do
+      it "defines fast_escape on Rack::Utils" do
         Rack::Utils.respond_to?(:fast_escape).should.be.true
       end
-    
+
       it "aliases original escape on Rack::Utils to old_escape" do
         Rack::Utils.respond_to?(:old_escape).should.be.true
       end
@@ -21,7 +17,7 @@ describe "RackFastEscape" do
     end
 
     describe "unescape methods" do
-      it "defines fast_unescape on Rack::Utils via R::U" do
+      it "defines fast_unescape on Rack::Utils" do
         Rack::Utils.respond_to?(:fast_unescape).should.be.true
       end
 
