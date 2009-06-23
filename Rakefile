@@ -68,6 +68,7 @@ GEMSPEC = Gem::Specification.new{|s|
   s.version      = PROJECT_VERSION
   s.files        = PROJECT_FILES
   s.require_path = "lib"
+  s.add_dependency "url_escape"
   
 
   s.post_install_message = <<MESSAGE
