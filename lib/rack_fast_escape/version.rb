@@ -1,3 +1,3 @@
 module RackFastEscape
-  VERSION = "0.0.2"
+  VERSION = "2009.06.24"
 end

@@ -1,3 +1,7 @@
+# Copyright (c) 2008-2009 The Rubyists, LLC (effortless systems) <rubyists@rubyists.com>
+# Distributed under the terms of the MIT license.
+# See the LICENSE file which accompanies this software for the full text
+#
 require File.expand_path("../../helper", __FILE__)
 describe "RackFastEscape" do
   describe "module embedding" do

@@ -1,3 +1,7 @@
+# Copyright (c) 2008-2009 The Rubyists, LLC (effortless systems) <rubyists@rubyists.com>
+# Distributed under the terms of the MIT license.
+# See the LICENSE file which accompanies this software for the full text
+#
 require "pathname"
 %w{bacon rack}.each { |lib|
   begin

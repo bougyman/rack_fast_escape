@@ -1,3 +1,7 @@
+# Copyright (c) 2008-2009 The Rubyists, LLC (effortless systems) <rubyists@rubyists.com>
+# Distributed under the terms of the MIT license.
+# See the LICENSE file which accompanies this software for the full text
+#
 begin; require 'rubygems'; rescue LoadError; end
 
 require 'rake'
@@ -5,7 +9,6 @@ require 'rake/clean'
 require 'rake/gempackagetask'
 require 'time'
 require 'date'
-require "lib/rack_fast_escape"
 
 PROJECT_SPECS = FileList[
   'spec/*/**/*.rb'
@@ -59,15 +62,16 @@ PROJECT_FILES = FileList[`git ls-files`.split("\n")].exclude('.gitignore').exclu
 
 GEMSPEC = Gem::Specification.new{|s|
   s.name         = "rack_fast_escape"
-  s.author       = "TJ Vanderpoel"
-  s.summary      = "The Rack Fast Escape library, by TJ Vanderpoel"
-  s.description  = "The Rack Fast Escape library, by TJ Vanderpoel"
+  s.author       = "The Rubyists, LLC"
+  s.summary      = "The Rack Fast Escape library, by The Rubyists, LLC"
+  s.description  = "The Rack Fast Escape library, by The Rubyists, LLC"
   s.email        = "The Rubyists, LLC <rubyists@rubyists.com>"
   s.homepage     = "http://github.com/bougyman/rack_fast_escape"
   s.platform     = Gem::Platform::RUBY
   s.version      = PROJECT_VERSION
   s.files        = PROJECT_FILES
   s.require_path = "lib"
+  s.rubyforge_project = "url-escape"
   s.add_dependency "url_escape"
   
 

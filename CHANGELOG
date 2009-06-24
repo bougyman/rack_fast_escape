@@ -1,0 +1,46 @@
+[ed188e6 | 2009-06-23 00:57:17 UTC] bougyman <bougyman@gotdebt.nationwide-recovery.com>
+
+  * added url_escape dependency
+
+[39e0766 | 2009-06-22 22:28:55 UTC] TJ Vanderpoel <Jayson Vaughn jv@rubyists.com>
+
+  * got reversioning for packaging working
+
+[627a1c0 | 2009-06-22 22:23:08 UTC] TJ Vanderpoel <Jayson Vaughn jv@rubyists.com>
+
+  * made reversion handle VERSION in the lib file
+
+[7155885 | 2009-06-22 20:14:29 UTC] Evan Phoenix <ephoenix@engineyard.com>
+
+  * Perform topiary services
+
+[75495ef | 2009-06-22 21:50:25 UTC] TJ Vanderpoel <Jayson Vaughn jv@rubyists.com>
+
+  * back to straight text
+
+[be475ac | 2009-06-22 21:49:45 UTC] TJ Vanderpoel <Jayson Vaughn jv@rubyists.com>
+
+  * moved to markdown
+
+[3e63eb8 | 2009-06-22 21:48:43 UTC] TJ Vanderpoel <Jayson Vaughn jv@rubyists.com>
+
+  * filled out some README
+
+[a389751 | 2009-06-22 21:26:39 UTC] TJ Vanderpoel <Jayson Vaughn jv@rubyists.com>
+
+  * moved version require
+
+[5ed4a16 | 2009-06-22 21:21:34 UTC] TJ Vanderpoel <Jayson Vaughn jv@rubyists.com>
+
+  * Added initial wrapper for URLEscape to be used in Rack::Utils
+
+    * RackFastEscape::R::U contains module methods which use URLEscape
+    * Binds R::U to ::Rack::Utils, extending it
+    * Sets Rack::Utils.fast_escape? and #fast_unescape?
+    * Remaps original escape/unescape to old_ and binds the new fast_
+      versions as escape/unescape
+
+[e6b8e04 | 2009-06-22 19:19:53 UTC] TJ Vanderpoel <Jayson Vaughn jv@rubyists.com>
+
+  * initial project skeleton
+
