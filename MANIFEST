@@ -1,5 +1,10 @@
+AUTHORS
+CHANGELOG
+LICENSE
+MANIFEST
 README
 Rakefile
+doc/LEGAL
 lib/rack_fast_escape.rb
 lib/rack_fast_escape/version.rb
 spec/helper.rb

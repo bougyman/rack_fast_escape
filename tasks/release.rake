@@ -29,7 +29,7 @@ INSTRUCTIONS
 To publish to rubyforge do following:
 
 rubyforge login
-rubyforge add_release #{rf_project} #{name} #{version.dump} pkg/#{name}-#{version}.gem
+rubyforge add_release #{rf_project} #{name} #{version.dump} -n README pkg/#{name}-#{version}.gem
 
 After you have done these steps, see:
 
